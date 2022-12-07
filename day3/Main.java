@@ -22,7 +22,7 @@ public class Main{
                 char duplicate = getDuplicate(line.substring(0,line.length() / 2), line.substring(line.length() / 2, line.length()));
                 letters.add(duplicate);
             }
-            file.close();     
+            file.close();
         }catch(FileNotFoundException e){
             e.getMessage();
         }
@@ -85,9 +85,10 @@ public class Main{
     public static char getMatching(String first, String second, String third){
         for(char letterOne : first.toCharArray()){
             for(char letterTwo : second.toCharArray()){
-                for(char letterThree : third.toCharArray())
-                if(letterOne == letterTwo && letterTwo == letterThree){
-                    return letterOne;
+                for(char letterThree : third.toCharArray()){
+                    if(letterOne == letterTwo && letterTwo == letterThree){
+                        return letterOne;
+                    }
                 }
             }
         }
